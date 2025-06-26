@@ -215,9 +215,7 @@ class UpdatePasswordWindow(QDialog):
             QMessageBox.warning(self, "Mismatch", "New passwords do not match.")
             return
 
-        if len(new_pw) < 8 or not any(c.isdigit() for c in new_pw) or not any(c.isupper() for c in new_pw):
-            QMessageBox.warning(self, "Weak Password", "Use at least 8 characters, 1 number, 1 uppercase.")
-            return
+        # Password validation removed - no more restrictions!
 
         try:
             conn = get_connection()
@@ -264,12 +262,18 @@ class UpdatePasswordWindow(QDialog):
                 font-weight: bold;
                 color: #000000;
                 margin-bottom: 2px;
+                background-color: #ffffff;
+                padding: 5px;
+                border-radius: 4px;
             }
             
             #subtitleLabel {
                 font-size: 14px;
                 color: #00cec9; 
                 font-weight: 500;
+                background-color: #ffffff;
+                padding: 5px;
+                border-radius: 4px;
             }
             
             /* Content Frame */
